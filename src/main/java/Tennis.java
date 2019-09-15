@@ -24,6 +24,9 @@ public class Tennis {
 
     public String score() {
         if (this.playerAGameTimes != this.playerBGameTimes) {
+            if (this.playerAGameTimes > 3) {
+                return this.playerA + " Adv";
+            }
             return scoreLookup.get(this.playerAGameTimes) + " " + scoreLookup.get(this.playerBGameTimes);
         }
         if (this.playerAGameTimes == 3) {

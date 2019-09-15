@@ -25,15 +25,20 @@ public class TennisTest {
 
     @Test
     public void when_0_2_then_Love_Thirty() {
-        tennis.playerBHit();
-        tennis.playerBHit();
+        givenPlayerBGameTimes(2);
         assertEquals("Love Thirty", tennis.score());
     }
 
     @Test
     public void when_0_1_then_Love_Fifteen() {
-        tennis.playerBHit();
+        givenPlayerBGameTimes(1);
         assertEquals("Love Fifteen", tennis.score());
+    }
+
+    private void givenPlayerBGameTimes(int times) {
+        for (int i = 0; i < times; i++) {
+            tennis.playerBHit();
+        }
     }
 
     @Test

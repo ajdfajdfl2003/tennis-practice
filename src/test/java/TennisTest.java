@@ -6,6 +6,9 @@ import static org.junit.Assert.assertEquals;
 public class TennisTest {
     private Tennis tennis;
 
+    /* 過程中發現的問題：
+     * 1. 太早把姓名功能引入
+     */
     @Before
     public void setUp() {
         tennis = new Tennis("Tom", "Joe");

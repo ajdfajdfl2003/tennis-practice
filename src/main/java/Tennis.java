@@ -26,6 +26,9 @@ public class Tennis {
         if (this.playerAGameTimes != this.playerBGameTimes) {
             return scoreLookup.get(this.playerAGameTimes) + " " + scoreLookup.get(this.playerBGameTimes);
         }
+        if (this.playerAGameTimes == 1) {
+            return scoreLookup.get(this.playerAGameTimes) + " All";
+        }
         return "Love All";
     }
 

@@ -30,6 +30,13 @@ public class TennisTest {
     }
 
     @Test
+    public void when_5_3_then_Tom_Win() {
+        givenPlayerAGameTimes(5);
+        givenPlayerBGameTimes(3);
+        assertEquals("Tom Win", tennis.score());
+    }
+
+    @Test
     public void when_3_5_then_Joe_Win() {
         givenPlayerAGameTimes(3);
         givenPlayerBGameTimes(5);
@@ -48,6 +55,13 @@ public class TennisTest {
         givenPlayerAGameTimes(4);
         givenPlayerBGameTimes(3);
         assertEquals("Tom Adv", tennis.score());
+    }
+
+    @Test
+    public void when_4_4_then_Deuce() {
+        givenPlayerAGameTimes(4);
+        givenPlayerBGameTimes(4);
+        assertEquals("Deuce", tennis.score());
     }
 
     @Test

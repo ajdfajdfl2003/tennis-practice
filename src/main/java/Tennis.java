@@ -62,7 +62,7 @@ public class Tennis {
     }
 
     private boolean isDeuce() {
-        return this.playerAGameTimes == 3;
+        return this.playerAGameTimes >= 3;
     }
 
     private String getSameScore() {

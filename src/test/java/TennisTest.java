@@ -23,6 +23,12 @@ public class TennisTest {
         assertEquals("Fifteen Love", tennis.score());
     }
 
+    @Test
+    public void when_3_0_then_Forty_Love() {
+        givenPlayerAGameTimes(3);
+        assertEquals("Forty Love", tennis.score());
+    }
+
     private void givenPlayerAGameTimes(int times) {
         for (int i = 0; i < times; i++) {
             tennis.playerAHit();

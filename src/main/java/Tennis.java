@@ -8,6 +8,7 @@ public class Tennis {
     static {
         scoreLookup.put(1, "Fifteen");
         scoreLookup.put(2, "Thirty");
+        scoreLookup.put(3, "Forty");
     }
 
     private final String playerA;

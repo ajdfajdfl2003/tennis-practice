@@ -6,6 +6,7 @@ public class Tennis {
     private static Map<Integer, String> scoreLookup = new HashMap<>();
 
     static {
+        scoreLookup.put(0, "Love");
         scoreLookup.put(1, "Fifteen");
         scoreLookup.put(2, "Thirty");
         scoreLookup.put(3, "Forty");
@@ -22,11 +23,8 @@ public class Tennis {
     }
 
     public String score() {
-        if (this.playerAGameTimes > 0) {
-            return scoreLookup.get(this.playerAGameTimes) + " Love";
-        }
-        if (this.playerBGameTimes > 0) {
-            return "Love " + scoreLookup.get(this.playerBGameTimes);
+        if (this.playerAGameTimes != this.playerBGameTimes) {
+            return scoreLookup.get(this.playerAGameTimes) + " " + scoreLookup.get(this.playerBGameTimes);
         }
         return "Love All";
     }

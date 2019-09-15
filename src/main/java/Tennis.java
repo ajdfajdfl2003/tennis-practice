@@ -14,6 +14,9 @@ public class Tennis {
         if (this.playerAGameTimes == 1) {
             return "Fifteen Love";
         }
+        if (this.playerAGameTimes == 2) {
+            return "Thirty Love";
+        }
         return "Love All";
     }
 

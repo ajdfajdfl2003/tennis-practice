@@ -25,7 +25,10 @@ public class Tennis {
     public String score() {
         if (this.playerAGameTimes != this.playerBGameTimes) {
             if (this.playerAGameTimes > 3 || this.playerBGameTimes > 3) {
-                return getAdvPlayer() + " Adv";
+                if (Math.abs(this.playerAGameTimes - this.playerBGameTimes) == 1) {
+                    return getAdvPlayer() + " Adv";
+                }
+                return getAdvPlayer() + " Win";
             }
             return getNormalScore();
         }

@@ -22,19 +22,26 @@ public class Tennis {
     }
 
     public String score() {
-        if (playerAGameTimes != playerBGameTimes) {
-            if (playerAGameTimes > 3 || playerBGameTimes > 3) {
-                if (Math.abs(playerAGameTimes - playerBGameTimes) == 1) {
-                    return getAdvPlayer() + " Adv";
-                }
-                return getAdvPlayer() + " Win";
-            }
-            return getNormalScore();
+        if (isScoreDifferent()) {
+            return isReadyForWin() ? getAdvPlayer() + getAdvStatusScore()
+                    : getNormalScore();
         }
         if (isDeuce()) {
             return "Deuce";
         }
         return getSameScore();
+    }
+
+    private boolean isScoreDifferent() {
+        return playerAGameTimes != playerBGameTimes;
+    }
+
+    private boolean isReadyForWin() {
+        return playerAGameTimes > 3 || playerBGameTimes > 3;
+    }
+
+    private String getAdvStatusScore() {
+        return Math.abs(playerAGameTimes - playerBGameTimes) == 1 ? " Adv" : " Win";
     }
 
     private String getSameScore() {

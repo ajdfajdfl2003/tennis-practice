@@ -10,16 +10,24 @@ public class Tennis {
         scoreLookup.put(3, "Forty");
     }
 
-    private int playerAGameTimes;
+    private int playerAGameTimes = 0;
+    private int playerBGameTimes = 0;
 
     public String score() {
         if (playerAGameTimes > 0) {
             return scoreLookup.get(playerAGameTimes) + " Love";
+        }
+        if (playerBGameTimes == 1) {
+            return "Love Fifteen";
         }
         return "Love All";
     }
 
     public void playerAHit() {
         this.playerAGameTimes++;
+    }
+
+    public void playerBHit() {
+        this.playerBGameTimes++;
     }
 }

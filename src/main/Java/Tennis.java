@@ -23,11 +23,8 @@ public class Tennis {
 
     public String score() {
         if (playerAGameTimes != playerBGameTimes) {
-            if (playerAGameTimes > 3) {
-                return firstPlayerName + " Adv";
-            }
-            if (playerBGameTimes > 3) {
-                return secondPlayerName + " Adv";
+            if (playerAGameTimes > 3 || playerBGameTimes > 3) {
+                return (playerAGameTimes > playerBGameTimes ? firstPlayerName : secondPlayerName) + " Adv";
             }
             return scoreLookup.get(playerAGameTimes) + " " + scoreLookup.get(playerBGameTimes);
         }

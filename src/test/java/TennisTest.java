@@ -16,6 +16,13 @@ public class TennisTest {
     }
 
     @Test
+    public void when_3_3_then_Deuce() {
+        givenPlayerAHitGameTimes(3);
+        givenPlayerBHitGameTimes(3);
+        assertEquals("Deuce", tennis.score());
+    }
+
+    @Test
     public void when_2_2_then_Thirty_All() {
         givenPlayerAHitGameTimes(2);
         givenPlayerBHitGameTimes(2);

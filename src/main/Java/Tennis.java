@@ -18,6 +18,9 @@ public class Tennis {
         if (playerAGameTimes != playerBGameTimes) {
             return scoreLookup.get(playerAGameTimes) + " " + scoreLookup.get(playerBGameTimes);
         }
+        if (playerAGameTimes >= 3) {
+            return "Deuce";
+        }
         return scoreLookup.get(playerAGameTimes) + " All";
     }
 

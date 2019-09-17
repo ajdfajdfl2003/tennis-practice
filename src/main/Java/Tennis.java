@@ -20,6 +20,9 @@ public class Tennis {
         if (playerBGameTimes == 1) {
             return "Love Fifteen";
         }
+        if (playerBGameTimes == 2) {
+            return "Love Thirty";
+        }
         return "Love All";
     }
 

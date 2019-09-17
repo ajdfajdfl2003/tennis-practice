@@ -8,11 +8,18 @@ public class TennisTest {
 
     @Before
     public void setUp() {
-        tennis = prepareTennis();
+        tennis = prepareTennis("Tom");
     }
 
-    private Tennis prepareTennis() {
-        return new Tennis();
+    private Tennis prepareTennis(String firstPlayerName) {
+        return new Tennis(firstPlayerName);
+    }
+
+    @Test
+    public void when_4_3_then_FirstPlayer_Adv() {
+        givenPlayerAHitGameTimes(4);
+        givenPlayerBHitGameTimes(3);
+        assertEquals("Tom Adv", tennis.score());
     }
 
     @Test

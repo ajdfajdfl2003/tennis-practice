@@ -13,9 +13,17 @@ public class Tennis {
 
     private int playerAGameTimes = 0;
     private int playerBGameTimes = 0;
+    private String firstPlayerName;
+
+    public Tennis(String firstPlayerName) {
+        this.firstPlayerName = firstPlayerName;
+    }
 
     public String score() {
         if (playerAGameTimes != playerBGameTimes) {
+            if (playerAGameTimes > 3) {
+                return firstPlayerName + " Adv";
+            }
             return scoreLookup.get(playerAGameTimes) + " " + scoreLookup.get(playerBGameTimes);
         }
         if (playerAGameTimes >= 3) {

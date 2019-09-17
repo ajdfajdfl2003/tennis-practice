@@ -16,6 +16,27 @@ public class TennisTest {
     }
 
     @Test
+    public void when_5_4_then_FirstPlayer_Adv() {
+        givenPlayerAHitGameTimes(5);
+        givenPlayerBHitGameTimes(4);
+        assertEquals("Tom Adv", tennis.score());
+    }
+
+    @Test
+    public void when_4_4_then_Deuce() {
+        givenPlayerAHitGameTimes(4);
+        givenPlayerBHitGameTimes(4);
+        assertEquals("Deuce", tennis.score());
+    }
+
+    @Test
+    public void when_5_3_then_FirstPlayer_Win() {
+        givenPlayerAHitGameTimes(5);
+        givenPlayerBHitGameTimes(3);
+        assertEquals("Tom Win", tennis.score());
+    }
+
+    @Test
     public void when_3_5_then_SecondPlayer_Win() {
         givenPlayerAHitGameTimes(3);
         givenPlayerBHitGameTimes(5);

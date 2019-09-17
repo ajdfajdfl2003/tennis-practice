@@ -24,14 +24,30 @@ public class Tennis {
     public String score() {
         if (playerAGameTimes != playerBGameTimes) {
             if (playerAGameTimes > 3 || playerBGameTimes > 3) {
-                return (playerAGameTimes > playerBGameTimes ? firstPlayerName : secondPlayerName) + " Adv";
+                return getAdvPlayer() + " Adv";
             }
-            return scoreLookup.get(playerAGameTimes) + " " + scoreLookup.get(playerBGameTimes);
+            return getNormalScore();
         }
-        if (playerAGameTimes >= 3) {
+        if (isDeuce()) {
             return "Deuce";
         }
+        return getSameScore();
+    }
+
+    private String getSameScore() {
         return scoreLookup.get(playerAGameTimes) + " All";
+    }
+
+    private boolean isDeuce() {
+        return playerAGameTimes >= 3;
+    }
+
+    private String getNormalScore() {
+        return scoreLookup.get(playerAGameTimes) + " " + scoreLookup.get(playerBGameTimes);
+    }
+
+    private String getAdvPlayer() {
+        return playerAGameTimes > playerBGameTimes ? firstPlayerName : secondPlayerName;
     }
 
     public void playerAHit() {

@@ -21,6 +21,9 @@ public class Tennis {
         if (playerAGameTimes == 1) {
             return "Fifteen All";
         }
+        if (playerAGameTimes == 2) {
+            return "Thirty All";
+        }
         return "Love All";
     }
 

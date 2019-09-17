@@ -1,12 +1,19 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Tennis {
+    private static Map<Integer, String> scoreLookup = new HashMap<>();
+
+    static {
+        scoreLookup.put(1, "Fifteen");
+        scoreLookup.put(2, "Thirty");
+    }
+
     private int playerAGameTimes;
 
     public String score() {
-        if (playerAGameTimes == 1) {
-            return "Fifteen Love";
-        }
-        if (playerAGameTimes == 2) {
-            return "Thirty Love";
+        if (playerAGameTimes > 0) {
+            return scoreLookup.get(playerAGameTimes) + " Love";
         }
         return "Love All";
     }

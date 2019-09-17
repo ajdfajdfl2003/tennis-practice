@@ -14,15 +14,20 @@ public class Tennis {
     private int playerAGameTimes = 0;
     private int playerBGameTimes = 0;
     private String firstPlayerName;
+    private String secondPlayerName;
 
-    public Tennis(String firstPlayerName) {
+    public Tennis(String firstPlayerName, String secondPlayerName) {
         this.firstPlayerName = firstPlayerName;
+        this.secondPlayerName = secondPlayerName;
     }
 
     public String score() {
         if (playerAGameTimes != playerBGameTimes) {
             if (playerAGameTimes > 3) {
                 return firstPlayerName + " Adv";
+            }
+            if (playerBGameTimes > 3) {
+                return secondPlayerName + " Adv";
             }
             return scoreLookup.get(playerAGameTimes) + " " + scoreLookup.get(playerBGameTimes);
         }
